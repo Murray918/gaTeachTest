@@ -1,3 +1,14 @@
+// we will need to make reject a common
+Array.prototype.reject = function (fn) {
+    let rej = test => !fn(test);
+    return this.filter(rej);
+};
+var callIt = (arr, fn) => {
+    console.clear()
+     !fn ? console.log(arr) : console.log(fn(arr))
+}
+
+
 
 var animals = [
     { name: 'Fluffkins', species: 'rabbit' },
@@ -10,34 +21,36 @@ var animals = [
 ]
 
 // @TODO this is a function mapping through an array and preforming some logic on the array using a for loop
-function findDogs() {
-    var dogs = []
-    for (var i = 0; i < animals.length; i++) {
-        if (animals[i].species === 'dog')
-            dogs.push(animals[i])
-        return dogs
+const findDogs = function (array) {
+    let dogs = []
+    for (let i = 0; i < array.length; i++) {
+        if (array[i].species === 'dogs')
+            dogs.push(array[i])
     }
+    return dogs
 }
-// console.log(findDogs())
+
+callIt(animals, findDogs)
 //TODO lets use .filter for find dogs 
 
-function findDogs2() {
-    var dogs = animals.filter(function (animal) {
-        return animal.species === dogs
+function findDogs2(array) {
+    let dogs = array.filter(function (a) {
+        return a.species === 'dogs'
     })
+    return dogs
 }
-console.log(findDogs2())
+
+callIt(animals, findDogs2)
 //@TODO lets seperate them out into functions that are independent of one another
-var isDog = function (animal) {
-    return animals.species === 'dogs'
+var isDog = function (array) {
+    return array.species === 'dogs'
 }
 
 var dogs = animals.filter(isDog)
-console.log(dogs)
+callIt(dogs ,null)
 
 //TODO we can then use the is dog function to also check for non dogs
-var otherAnimals = animal.reject(isDog)
-
-console.log(otherAnimals)
-
+var otherAnimals = animals.reject(isDog)
+// console.clear()
+// callIt(otherAnimals, null)
 

@@ -4,13 +4,16 @@
   "description": "this are material helpers",
   "main": "functional.js",
   "scripts": {
-    "func" : "nodemon -q functional.js",
-    "obj" : "nodemon -q objective.js",
+    "func": "nodemon -q functional.js",
+    "obj": "nodemon -q objective.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Andrew Murray",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^1.18.6"
+  },
+  "dependencies": {
+    "lodash": "^4.17.11"
   }
 }
