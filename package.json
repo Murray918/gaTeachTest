@@ -1,0 +1,16 @@
+{
+  "name": "gateachtest",
+  "version": "1.0.0",
+  "description": "this are material helpers",
+  "main": "functional.js",
+  "scripts": {
+    "func" : "nodemon -q functional.js",
+    "obj" : "nodemon -q objective.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Andrew Murray",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.6"
+  }
+}
