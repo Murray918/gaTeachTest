@@ -1,8 +1,12 @@
-// we will need to make reject a common
+// we will need to make reject a common for this script instead of pulling it from a library like underscore or lodash
+//however these are wonderful libraries
 Array.prototype.reject = function (fn) {
     let rej = test => !fn(test);
     return this.filter(rej);
 };
+
+//this is a function for calling all of out functions it takes an array and a function and console.logs the output
+//this is solely for the exercise of making this a function since the topic is functional programming and is not necessary just paradigms are not always set in stone and one way is not better than the other it simply clears the console before it shows the output
 var callIt = (arr, fn) => {
     console.clear()
      !fn ? console.log(arr) : console.log(fn(arr))
@@ -41,7 +45,7 @@ function findDogs2(array) {
 }
 
 callIt(animals, findDogs2)
-//@TODO lets seperate them out into functions that are independent of one another
+//@TODO lets separate them out into functions that are independent of one another
 var isDog = function (array) {
     return array.species === 'dogs'
 }
@@ -51,6 +55,5 @@ callIt(dogs ,null)
 
 //TODO we can then use the is dog function to also check for non dogs
 var otherAnimals = animals.reject(isDog)
-// console.clear()
 // callIt(otherAnimals, null)
 
